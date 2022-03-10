@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <!--<link rel="stylesheet" href="static/styles.css">-->
     {% if title %}
         <title>Oshiete - {{ title }}</title>
     {% else %}
@@ -15,9 +14,9 @@
         <nav class="navbar">
             <div class="collapse navbar-collapse" id="navbarToggle">
                 <ul>
-                    <li><a class="nav-item nav-link" href="/">Profile</a></li>
-                    <li><a class="nav-item nav-link" href="/about">Dashboard</a></li>
-                     <!-- Navbar Right Side-->
+                    <li><a class="nav-item nav-link" href="/user/<user>-Profile">Profile</a></li>
+                    <li><a class="nav-item nav-link" href="/user/<user>-Profile">Dashboard</a></li>
+                     <!-- Navbar Right Side not working for now-->
                     <li><a style="float:right" class="nav-item nav-link" href="/user/courses">Courses</a></li>
                     <li><a style="float:right" class="nav-item nav-link" href="/">Log out</a></li>
                 </ul>
