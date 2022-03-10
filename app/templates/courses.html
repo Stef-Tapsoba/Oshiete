@@ -1,0 +1,8 @@
+{% extends "user-view.html" %}
+{% block content%}
+{% for course in courses%}
+    <input type="submit" id="course-button" value="{{ course[0] }}">
+    <br>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -29,9 +29,8 @@ input {
     font-size: 1.3em;
 }
 
-.row {
+::placeholder {
     text-align: center;
-    display:block;
 }
 
 ul {
@@ -65,29 +64,27 @@ li a:hover {
     float: center;
 }
 
-.form-control-label{
-    width: 15px;
-    float:left;
-}
-
-.form-control form-control-lg {
-    width: 50px;;
-    float:right;
-}
-
 footer {
     text-align: center;
     padding: 10px;
   }
 
-#login-button {
+#login-button, #signup-button, #submit-button {
     background-color: rgb(94, 207, 207);
     margin: 10;
     color: white;
     width: 150px;
 }
 
-#login-button:hover {
+#course-button {
+    background-color: rgb(84, 161, 161);
+    margin: 20;
+    color: white;
+    width: 150px;
+    height: 100px;
+}
+
+#login-button:hover, #signup-button:hover, #submit-button:hover, #course-button:hover {
     background-color: #A2C7E5;
     cursor: pointer;
 }
