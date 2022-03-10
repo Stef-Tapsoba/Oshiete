@@ -1,0 +1,7 @@
+<!doctype html>
+<title> Hello</title>
+{% if name %}
+<h1>Hi {{ name }}!  It seems like you haven't learned anything yet :( Click on one of the courses below to start!</h1>
+{% else %}
+<h1>Oops! We do not have you in our database, sign up first before accessing any courses!</h1>
+{% endif %}

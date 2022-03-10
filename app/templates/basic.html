@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h1></h1>
+</body>
+</html>
+
+{% extends "base.html" %}
+{% block content%}
+    {% for message in get_flashed_messages() %}
+        <p> {{message}} </p>
+    {% endfor %}
+{% endblock %}

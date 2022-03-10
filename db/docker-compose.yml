@@ -1,0 +1,25 @@
+version: "2"
+services:
+  app:
+    build: ./app
+    links:
+      - db
+    ports:
+      - "5000:5000"
+
+  db:
+    image: mysql:5.7-oracle
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - 33065:3306
+    volumes:
+      - ./mysql_data:/var/lib/mysql:rw
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content%}
+<h1>Contact Us</h1>
+<form id="form-contact" action="/" method="POST">
+    <label for="inputEmail" class="sr-only">Please enter your email address</label>
+    <br>
+    <input type="email" name="inputEmail" id="inputEmail" class="form-control" 
+    placeholder="Email" required autofocus/>
+    <br>
+    <br>
+    <input type="text" name="inputMessage" id="inputMessage" class="form-control"
+    placeholder="Message" required autofocus/>
+    <br>
+    <input type="submit" id="submit-button" value="Send">
+</form>
+{% endblock %}

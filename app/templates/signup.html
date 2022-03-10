@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content%}
+    <div class="container h-100">
+            <form class="form" method="POST" action="/">
+                <h2>Join us today!</h2>
+                <div class="row">
+                    <div class="form-group">
+                        {{ form.username.label(class="form-control-label") }}
+                        {{ form.username(class="form-control form-control-lg") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.email.label(class="form-control-label") }}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.password.label(class="form-control-label") }}
+                        {{ form.password(class="form-control form-control-lg") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.confirm_password.label(class="form-control-label") }}
+                        {{ form.confirm_password(class="form-control form-control-lg") }}
+                    </div>
+                    
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-outline-info") }}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+<!--
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="static/register-style.css">
+    <title> Oshiete - Signup</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="site-header">
+            <nav class="navbar">
+                <div class="collapse navbar-collapse" id="navbarToggle">
+                    <div class="navbar-nav mr-auto">
+                        <a class="nav-item nav-link" href="/">Home</a>
+                        <a class="nav-item nav-link" href="/about">About</a>
+                        <a class="nav-item nav-link" href="/contact">Contact Us</a>
+                    </div>
+                    
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="/login">Log In</a>
+                        <a class="nav-item nav-link" href="/signup">Sign Up</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="user">
+                <h1 class="display-5 fw-bold text-center">Sign up today!</h1>
+                <form id="form-signin" action="/api/signup" method="POST">
+                    <div class="form__group">
+                        <input type="text" name="inputName" placeholder="First Name" required/>
+                    </div>
+                    <div class="form__group">
+                        <input type="email" name="inputEmail" placeholder="Email address" required/>
+                    </div> 
+                    <div class="form__group">
+                        <input type="password" name="inputPassword" placeholder="Password" required/>
+                    </div>
+                    <button class="btn" type="submit">Sign up</button>    
+                </form>
+            </div>
+        </div>
+                
+        <footer class="footer">          
+            <p>&copy; Ringo 2022</p>         
+        </footer>    
+    </div>
+</body>
+</html>
+-->
