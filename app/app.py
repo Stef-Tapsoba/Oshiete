@@ -9,6 +9,17 @@ from forms import registration_form, login_form
 app = Flask(__name__)
 app.secret_key = "hellokitty"
 
+mydb = mysql.connector.connect(
+    host="127.0.0.1",
+    port="33065",
+    user="root",
+    passwd="example",
+    database="info600"
+)
+
+my_cursor = mydb.cursor()
+
+
 @app.route("/", methods=["POST", "GET"])
 @app.route("/home")
 def index():
@@ -48,8 +59,27 @@ def contact():
     return render_template("contact.html")
 
 
-@app.route("/database")
+@app.route("/database", methods=["POST", "GET"] )
 def database():
+    try:
+        if request.method == 'POST':
+            #fetch form data
+            userDetails = request.form
+            username = str(userDetails['inputName'])
+            email = str(userDetails['inputEmail'])
+            password = str(userDetails['inputPassword'])
+            my_cursor.execute("INSERT INTO users(username, email, password) VALUES(%s, %s, %s)", 
+                              (username, email, password))
+            #my_cursor.execute("INSERT INTO users(username, email, password) VALUES({username}, {email}, {password})")
+            mydb.commit()
+        
+    except mysql.connector.Error as error:
+        print("Failed to insert record")
+        
+    my_cursor.execute("SELECT username, email, password FROM users")
+    records = my_cursor.fetchall()
+    return render_template("view.html",records=records)
+    '''
     mydb = mysql.connector.connect(
         host="db",
         port="33065",
@@ -63,6 +93,7 @@ def database():
     records = my_cursor.fetchall()
 
     return render_template("view.html",records=records)
+    '''
 
 if __name__ == '__main__':
     app.run(debug=True)
