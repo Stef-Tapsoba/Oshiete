@@ -1,30 +1,16 @@
 {% extends "base.html" %}
 {% block content%}
 <h1>Welcome</h1>
-<form class="form" action="/user/profile" method="post">
-    {% for message in get_flashed_messages() %}
-        <p> {{message}} </p>
-    {% endfor %}
+<form class="form" method="post">
     <div class="form-group">
-        {{ form.username.label(class="form-control-label") }}
-        {{ form.username(class="form-control form-control-lg") }}
-        
+        <input type="text" name="username" placeholder="Username" required>
     </div>
     
     <div class="form-group">
-        {{ form.password.label(class="form-control-label") }}
-        {{ form.password(class="form-control form-control-lg") }}
+        <input type="password" name="password" placeholder="Password" required>
     </div>
-    <div class="form-group">
-        {{ form.submit(class="btn btn-outline-info") }}
+    <div>
+        <input type="submit" id="login-button" value="Login">
     </div>
-
-    <!--
-    <input type="text" name="username" placeholder="Username">
-    <br>
-    <input type="password" name="password" placeholder="Password">
-    <br>
-    <input type="submit" id="login-button" value="Login">
-    -->
 </form>
 {% endblock %}

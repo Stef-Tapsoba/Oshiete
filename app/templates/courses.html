@@ -1,0 +1,13 @@
+{% extends "user-view.html" %}
+{% block content%}
+<div id="content">
+{% for course in courses%}
+    <ol>
+        <li><input type="submit" id="course-button" value="{{ course[0] }}">
+        </li>        
+    </ol>
+{% endfor %}
+</div>
+<br>
+<br>
+{% endblock %}

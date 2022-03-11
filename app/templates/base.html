@@ -27,7 +27,10 @@
     </header>
     <br>
     <main role="main" class="container">
-        <!--{% with messages = get_flashed_messages(with_categories=true) %}
+        <!--{% for message in get_flashed_messages() %}
+            <p> {{message}} </p>
+        {% endfor %}-->
+        {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages%}
                     <div class="alert alert-{{ category }}">
@@ -35,11 +38,13 @@
                     </div>
                 {% endfor %}
             {% endif %}
-        {% endwith %}-->
+        {% endwith %}
         {% block content %}{% endblock %}
     </main>
+    <br>
+    <br>
     <footer class="footer">          
-        <p>&copy; Ringo 2022</p>         
+        <p>&copy; りんご (Ringo) 2022</p>         
     </footer> 
 </body>
 </html>
